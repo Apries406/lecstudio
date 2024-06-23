@@ -1,12 +1,14 @@
 import { actionsMenu } from '../../constants/actionsMenu'
+import ActionItem from './ActionItem'
 import styles from './actions.module.styl'
+
 const Actions = () => {
   return (
     <div className={styles['actions-container']}>
       {actionsMenu.map((item) => (
-        <div className="action-item" onClick={() => item.click()}>
+        <ActionItem color={item.color} onClick={item.onClick}>
           {item.icon}
-        </div>
+        </ActionItem>
       ))}
     </div>
   )
